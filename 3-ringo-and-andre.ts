@@ -13,7 +13,7 @@ interface PersonInterface {
   lastName: string;
 }
 
-class Person {
+class Person implements PersonInterface {
   firstName: string;
   lastName: string;
   constructor(fName: string, lName: string) {
@@ -32,7 +32,7 @@ class Musician extends Person {
     this.instrument = instr;
   }
   introduce() {
-    return `Hi, I'm ${this.firstName} ${this.lastName}. I play the ${this.instrument}.`;
+    return super.introduce() + ` I play the ${this.instrument}.`;
   }
 }
 
@@ -43,7 +43,7 @@ class Athlete extends Person {
     this.sport = sport;
   }
   introduce() {
-    return `Hi, I'm ${this.firstName} ${this.lastName}. I play ${this.sport}.`;
+    return super.introduce() + ` I play ${this.sport}.`;
   }
 }
 

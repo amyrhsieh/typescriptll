@@ -14,6 +14,7 @@
 interface PersonInterface {
   firstName: string;
   lastName: string;
+  middleName?: string;
 }
 
 function printPerson(person: PersonInterface) {

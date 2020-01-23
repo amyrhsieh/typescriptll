@@ -4,8 +4,14 @@
  *
  * Try:
  * - Removing the super() call in a subclass constructor.
+ * - Have the Person class implement the PersonInterface.
  * - Creating a new subclass of Person, with different fields and methods!
 */
+
+interface PersonInterface {
+  firstName: string;
+  lastName: string;
+}
 
 class Person {
   firstName: string;
@@ -26,7 +32,7 @@ class Musician extends Person {
     this.instrument = instr;
   }
   introduce() {
-    return `Hi, I'm ${this.firstName} ${this.lastName}. I play ${this.instrument}.`;
+    return `Hi, I'm ${this.firstName} ${this.lastName}. I play the ${this.instrument}.`;
   }
 }
 
@@ -43,5 +49,5 @@ class Athlete extends Person {
 
 const ringoStarr = new Musician('Ringo', 'Starr', 'drums');
 console.log(ringoStarr.introduce());
-const andreAgassi = new Musician('Andre', 'Agassi', 'tennis');
+const andreAgassi = new Athlete('Andre', 'Agassi', 'tennis');
 console.log(andreAgassi.introduce());
